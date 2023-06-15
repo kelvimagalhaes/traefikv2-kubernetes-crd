@@ -1,0 +1,79 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: traefik-deployment
+  namespace: traefik
+  labels:
+    app: traefik
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: traefik
+
+  template:
+    metadata:
+      labels:
+        app: traefik
+
+    spec:
+      serviceAccountName: traefik-account
+      containers:
+        - name: traefik
+          image: traefik:v2.9
+          args:
+            # Entrypoints
+            - --entryPoints.web.address=:80
+            - --entryPoints.websecure.address=:443
+            - --entryPoints.traefik.address=:8080
+            # Providers Traefik KUBERNETESCRD | FILE
+            - --providers.kubernetescrd
+            - --providers.file.filename=/config/traefik.toml
+            # Local em que o arquivo de de Conf do Certificado é montado.
+            - --providers.kubernetescrd.certauthfilepath=/data/cert/certificado.crt
+            - --providers.file.watch=true
+            # Habilitando Dashboard
+            - --api.insecure
+            - --api.dashboard=true
+            # Nível de Log  DEBUG | INFO
+            - --accesslog=true
+            - --log.level=DEBUG
+            # Desabilita verificação SSL
+            - --serversTransport.insecureSkipVerify=true
+
+          resources:
+            limits:
+              cpu: 300m
+              memory: 150Mi
+            requests:
+              cpu: 100m
+              memory: 50Mi
+
+          ports:
+            - name: web
+              containerPort: 80
+            - name: websecure
+              containerPort: 443
+            - name: traefik
+              containerPort: 8080
+
+          volumeMounts:
+            - mountPath: /data
+              name: traefik-cert-pvc
+            - name: traefik-config
+              mountPath: /config
+  
+      volumes:
+        - name: traefik-cert-pvc
+          persistentVolumeClaim:
+            claimName: traefik-cert-pvc
+        - name: traefik-config
+          configMap:
+            name: traefik-config
+
+      nodeSelector:
+        traefik: "true"
+
+---

@@ -1,0 +1,25 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+
+metadata:
+  name: traefik
+  namespace: traefik
+
+spec:
+  entryPoints:
+    - web
+    - websecure
+
+  routes:
+    - match: Host(`traefik-k8s.com.br`)
+      kind: Rule
+
+      middlewares:
+        - name: basicauth
+        - name: redirectscheme
+
+      services:
+        - name: api@internal
+          kind: TraefikService
+
+  tls: {}

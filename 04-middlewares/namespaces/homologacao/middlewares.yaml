@@ -1,0 +1,67 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+
+metadata:
+  name: http-errors
+  namespace: homologacao
+
+spec:
+  errors:
+    status:
+      - "402-499"
+      - "500-599"
+    query: /{status}.html
+    service:
+      name: manutencao
+      port: 80
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+
+metadata:
+  name: allow-ipwhitelist
+  namespace: homologacao
+
+spec:
+  ipWhiteList:
+    sourceRange:
+      - 10.10.0.0/22
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+
+metadata:
+  name: redirectscheme
+  namespace: homologacao
+
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: redirect-web-websecure
+  namespace: homologacao
+
+spec:
+  entryPoints:
+    - web
+    - websecure
+
+  routes:
+    - match: HostRegexp(`{host:.+}`)
+      kind: Rule
+
+      services:
+        - name: api@internal
+          kind: TraefikService
+          port: 80
+
+      middlewares:
+        - name: redirectscheme
