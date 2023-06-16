@@ -13,7 +13,7 @@ Implementação Traefikv2 em cluster k8s através do provider CRD :alien:
 - [rbac.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/rbac.yaml) - Cluster Roles
 - [role-binding.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role-binding.yaml) - Cluster Roles
 - [role.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role.yaml) - Cluster Roles
-- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pv.yaml) - (Opcional), volume criado do tipo hostPath, especificando caminho do ceritifado 
+- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pv.yaml) - (Opcional), volume criado do tipo hostPath, especificando caminho do certificado 
 - [pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pvc.yaml) - (Opcional), mas é usuado para que o tráfego seja confiável, pois cria um volume persistente na máquina host que é usado para armazenar os certificados
 - [secret-dashboard.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/03-secrets/secret-dashboard.yaml) - (Opcional), mas é necessário se usar a middlewares do tipo basicAuth para autenticar na página de dashboard o traefik.
 --------------------------------
