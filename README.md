@@ -7,35 +7,35 @@ Implementação Traefikv2 em cluster k8s através do provider CRD
 
 - [homologacao.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/00-namespaces/homologacao.yaml)
 
-* [traefik.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/00-namespaces/traefik.yaml)
+- [traefik.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/00-namespaces/traefik.yaml)
 
-+ [account.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/account.yaml)
+- [account.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/account.yaml)
 
-[definitions.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/definitions.yaml)
+- [definitions.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/definitions.yaml)
 
-[rbac.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/rbac.yaml)
+- [rbac.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/rbac.yaml)
 
-[role-binding.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role-binding.yaml)
+- [role-binding.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role-binding.yaml)
 
-[role.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role.yaml)
+- [role.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/01-crd/role.yaml)
 
-[pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pv.yaml)
+- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pv.yaml)
 
-[pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pvc.yaml)
+- [pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/02-volumes/pvc.yaml)
 
-[secret-dashboard.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/03-secrets/secret-dashboard.yaml)
+- [secret-dashboard.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/03-secrets/secret-dashboard.yaml)
 
-[middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/traefik/middlewares.yaml)
+- [middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/traefik/middlewares.yaml)
 
-[middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/homologacao/middlewares.yaml)
+- [middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/homologacao/middlewares.yaml)
 
-[configmap.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/configmap.yaml)
+- [configmap.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/configmap.yaml)
 
-[services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
+- [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
 
-[deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/deployment.yaml)
+- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/deployment.yaml)
 
-[services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
+- [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
 
-[ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml)
+- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml)
 
