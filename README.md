@@ -17,9 +17,8 @@ Implementação Traefikv2 em cluster k8s através do provider CRD
 - [secret-dashboard.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/03-secrets/secret-dashboard.yaml) - (Opcional), mas é necessário se usar a middlewares do tipo basicAuth para autenticar na página de dashboard o traefik.
 - [middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/traefik/middlewares.yaml) - Middlewares criadas no namespace "traefik"
 - [middlewares.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/04-middlewares/namespaces/homologacao/middlewares.yaml) - Middlewares criadas no namespace "homologacao"
-- [configmap.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/configmap.yaml)
-- [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
-- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/deployment.yaml)
-- [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml)
-- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml)
+- [configmap.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/configmap.yaml) - Usado para armazenar a configuração dinâmica através do arquivo traefik.toml
+- [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml) - Expõe as portas do contêiner para traefik
+- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/deployment.yaml) - A implantação do container Traefik com os pontos de montagens associado para cada volume persistente se integrar com certificado SSL e configuração do tipo dinâmica && File.
+- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml) - Usado para expor da dashboard do Traefik externamente e proteger usando a middleware basicAuth.
 
