@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: manutencao
+  namespace: homologacao
+
+spec:
+  ports:
+    - name: websecure
+      port: 80
+      targetPort: websecure
+
+  selector:
+    app: manutencao

@@ -1,0 +1,23 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: manutencao
+  namespace: homologacao
+
+spec:
+  entryPoints:
+    - web
+    - websecure
+
+  routes:
+    - match: Host(`manutencao-k8s.com.br`)
+      kind: Rule
+
+      middlewares:
+        - name: redirectscheme
+
+      services:
+        - name: manutencao
+          port: 80
+
+  tls: {}
