@@ -25,4 +25,11 @@ Implementação Traefikv2 em cluster k8s através do provider CRD :alien:
 - [services.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/services.yaml) - Expõe as portas do contêiner para traefik
 - [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/deployment.yaml) - Configuração do pod Traefik com os pontos de montagens associado para cada volume persistente se integrar com certificado SSL e configuração do tipo dinâmica && File.
 - [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml) - Usado para expor da dashboard do Traefik externamente e proteger usando a middleware basicAuth.
+-------------------------------- 
+Serviço de manutenção, caso queira uma página de erro personalizada;
+- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/deployment.yaml)
+- [service.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/services.yaml)
+- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/ingressroute.yaml)
+- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pv.yaml)
+- [pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pvc.yaml) 
 
