@@ -27,9 +27,9 @@ Implementação Traefikv2 em cluster k8s através do provider CRD :alien:
 - [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/05-traefik/ingressroute.yaml) - Usado para expor da dashboard do Traefik externamente e proteger usando a middleware basicAuth.
 -------------------------------- 
 Serviço de manutenção, caso queira uma página de erro personalizada;
-- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/deployment.yaml)
-- [service.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/services.yaml)
-- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/ingressroute.yaml)
-- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pv.yaml)
-- [pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pvc.yaml) 
+- [deployment.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/deployment.yaml) - Configuração do Pod de manutenção, caso queira colocar uma página de erro html personalizada
+- [service.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/services.yaml) - Expõe as portas do container manutenção
+- [ingressroute.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/ingressroute.yaml) - Usado para criar a rota do serviço
+- [pv.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pv.yaml) Local de armazenamento do arquivo html
+- [pvc.yaml](https://github.com/kelvimagalhaes/traefikv2-kubernetes-crd/blob/main/06-manutencao/volumes/pvc.yaml) Cria um volume persistente na máquina host "manutenção"
 
